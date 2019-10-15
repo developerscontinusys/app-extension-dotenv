@@ -44,6 +44,8 @@ const extendWithDotenv = function (api, conf) {
 
   const { config } = require('dotenv')
   const result = config(envOptions)
+  const dotenvExpand = require('dotenv-expand')
+  dotenvExpand(result)
 
   // check for dotenv error
   if (result.error) {
